@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Cabura играть в mines онлайн с максимальной отдачей</title>
+  <meta name="description" content="Ведущий в мире сайт онлайн-азартных игр с миллионами клиентов по всему миру и быстрыми выплатами">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+  <link href="/files/all.css" rel="stylesheet">
+  <link href="/files/ionicons.css" rel="stylesheet">
+  <link href="/files/jqvmap.css" rel="stylesheet">
+  <link rel="stylesheet" href="/files/dfg_002.css">
+  <link rel="stylesheet" href="/files/dfg.css">
+  <link id="dfMode" rel="stylesheet" href="/files/skin.css">
+  <script src="https://www.google.com/recaptcha/api.js?onload=renderRecaptchas&render=explicit" async defer></script>
+  <script>
+    window.renderRecaptchas = function() {
+        var recaptchas = document.querySelectorAll('.g-recaptcha');
+        for (var i = 0; i < recaptchas.length; i++) {
+            grecaptcha.render(recaptchas[i], {
+                sitekey: recaptchas[i].getAttribute('data-sitekey')
+            });
+        }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+    $(document).ready(function(){
+   if (!isNaN(window.location.pathname.split("/")[2]) && window.location.pathname.split("/")[1] == 'game'){
+            $.ajax({
+        type: 'POST',
+        url: '/action.php',
+        data: {
+            type: "gameHistory",
+            id: window.location.pathname.split("/")[2]
+        },
+        success: function (data) {
+            $("#checkModal").modal("show");
+            $("#checkModal .modal-body").html(data);
+        }
+        });
+        }
+        
+        var conn1 = new WebSocket('wss://a.cabura.life');
+                                conn1.onmessage = function(e) {
+                                var kk = JSON.parse(e.data);
+                                $("#response").prepend(kk.new);
+                                //$("#oe").html(kk.count);
+                                $('#response').children().slice(20).remove();
+                                };
+  });
+    
+    
+    
+  </script>
+  <script src="script.js"></script>
+  <script src="/files/jquery.js"></script>
+  <script src="/files/cbrd.js"></script>
+  <script src="/files/cookie.js"></script>
+  <script src="/files/bootstrap.js"></script>
+  <script src="/files/feather.js"></script>
+  <script src="/files/typehead.js"></script>
+  <script src="/files/perfect-scrollbar.js"></script>
+  <script src="/files/jquery_005.js"></script>
+  <script src="/files/jquery_006.js"></script>
+  <script src="/files/jquery_003.js"></script>
+  <script src="/files/Chart.js"></script>
+  <script src="/files/dataTables.responsive.min.js"></script>
+  <script src="/files/responsive.dataTables.min.js"></script>
+  <script src="/files/dataTables.js"></script>
+  <script src="/files/jquery_002.js"></script>
+  <script src="/files/jquery_004.js"></script>
+  <script src="/files/moment.js"></script>
+  <script src="/files/daterangepicker.js"></script>
+  <script src="/files/odometer.js"></script>
+  <script src="/files/dfg_003.js"></script>
+  <script src="/files/dfg.js"></script>
+  <script src="/files/jquery-ui.min.js"></script>
+  <script src="/files/ion.js"></script> <noscript>
+  <div></div></noscript>
+  <style>
+
+  .gameinc.present span, .gameinc:hover span {
+    background: #0168fa!important;
+    background: linear-gradient(45deg, #1c65c9 0%, #2c80ff 100%)!important;
+  }
+
+
+        @media (max-width: 992px) {
+        .mg-header {
+            margin-top: 55px;
+            z-index: 998!important;
+        }
+        .mg-content {
+            margin-top: 90px;
+            z-index: 998!important;
+        }
+     }
+    
+  </style>
+  <style>
+            .new-mes {
+                fill: rgba(250, 1, 1, 0.06)!important;
+                color: #fa7001eb!important;
+            }
+            
+            .ind-top
+            {
+            fill: rgba(0, 23, 55, 0.04);
+            }
+            .ind-top:hover
+            {
+                fill: rgba(1, 104, 250, 0.2);
+                color: #0168fa;
+            }
+            
+            
+        
+            
+  </style>
+  <style></style>
+  <style>
+                #response tr:hover{
+                    cursor:pointer;
+                }
+  </style>
+  <style>
+  .cls-1 { fill: #00364d; } .cls-2 { fill: #009a61; } .cls-3 { fill: #fff; } 
+  </style>
+  <style>
+  .cls-1 { fill: #00364d; } .cls-2 { fill: #009a61; } .cls-3 { fill: #fff; } 
+  </style>
+</head>
+<body class="page-profile df-roboto" style="font-family: -apple-system, BlinkMacSystemFont, sans-serif!important;">
+  <div class="navbar navbar-header navbar-header-fixed mob-head" style="position: fixed;top: 0;left: 0;right: 0;z-index: 999;">
+    <a href="" id="mainMenuOpen" class="burger-menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
+    <div class="navbar-brand d-md-none" style="width:100px!important">
+      <a href="/" class="df-logo tx-26">Cabura</a>
+    </div>
+    <div class="navbar-right">
+      <div onclick="window.location.href='/'" class="dropdown dropdown-notification d-md-none" id="backArr">
+        <a class="" data-toggle="dropdown" style="color:#8f9dae"><svg viewbox="0 0 24 22" width="22" height="25" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline></svg></a>
+      </div>
+    </div>
+  </div>
+  <header class="navbar navbar-header navbar-header-fixed mg-header" style="max-width: 1180px;margin-right: auto;margin-left: auto;position: fixed;top: 0;left: 0;right: 0;z-index: 999;">
+    <div class="navbar-brand d-none d-sm-flex" style="width:100px!important">
+      <a href="/" class="df-logo tx-26">Cabura</a>
+    </div>
+    <div id="navbarMenu" class="navbar-menu-wrapper">
+      <div class="navbar-menu-header">
+        <a href="/" class="df-logo">Cabura</a> <a id="mainMenuClose" href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line></svg></a>
+      </div>
+      <ul class="nav navbar-menu">
+        <li class="nav-item">
+          <a href="/" class="nav-link">Главная</a>
+        </li>
+        <li class="nav-item" datait="about">
+          <a href="/about.php" class="nav-link">Как играть</a>
+        </li>
+        <li class="nav-item" datait="faq">
+          <a href="/faq.php" class="nav-link">FAQ</a>
+        </li>
+        <li class="nav-item" datait="ref">
+          <a href="/ref.php" class="nav-link">Рефералы</a>
+        </li>
+        <li class="nav-item" datait="bonus">
+          <a href="/bonus.php" class="nav-link">Бонусы</a>
+        </li>
+        <li class="nav-item" datait="contacts">
+          <a href="/contact.php" class="nav-link">Контакты</a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-right" style="width:220px!important">
+      <a href="#modalSignIn" data-toggle="modal" class="btn btn-white btn-uppercase flex-fill mg-r-10 bt-mob" style="max-width:150px;cursor:pointer">Вход</a> <a href="#modalSignUp" data-toggle="modal" class="btn btn-brand-01 btn-uppercase flex-fill bt-mob" style="">Регистрация</a>
+    </div>
+  </header>
+  <div class="content content-fixed mg-content">
+    <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+      <div class="cont-des d-none mexe-let" id="234io"></div>
+      <div class="row">
+        <div class="col-sm-6 col-lg-2 mg-t-10">
+          <div class="align-items-center justify-content-between mg-b-20 d-none d-sm-flex">
+            <h2 class="tx-uppercase tx-semibold mg-b-0 ch-gm" style="color: #031a61;">Выбор игры</h2>
+          </div>
+          <ul class="list-unstyled media-list mg-b-15 d-none d-sm-block">
+            <li onclick="window.location.href='/dice.php'" id="menudice" class="media align-items-center mg-t-15 gameinc">
+              <div class="avatar">
+                <span class="avatar-initial rounded bg-dark men-gam" style="box-shadow: 0 5px 23px 0 rgba(59, 72, 99, 0.25);"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box">
+                <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                <line x1="12" y1="22.76" x2="12" y2="11"></line></svg></span>
+              </div>
+              <div class="media-body pd-l-15">
+                <h6 class="mg-b-2"><a href="/dice.php" class="link-01 tx-18">Dice</a></h6>
+              </div>
+            </li>
+            <li onclick="window.location.href='/mines.php'" id="menumines" class="media align-items-center mg-t-15 gameinc">
+              <a href="mines">
+              <div class="avatar">
+                <span class="avatar-initial rounded bg-dark men-gam" style="box-shadow: 0 5px 23px 0 rgba(59, 72, 99, 0.25)"><i class="ion ion-md-grid tx-22"></i></span>
+              </div></a>
+              <div class="media-body pd-l-15">
+                <h6 class="mg-b-2"><a href="/mines.php" class="link-01 tx-18">Mines</a></h6>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-10 col-xl-10 mg-t-10" id="loadPage" style="display:none;height:100vh">
+          <div class="spinner-border">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+        <div class="d-none">
+          <h1>Cabura mines</h1>
+          <p>Любителям-игроманам казино Cabura предоставляет массу возможностей. Одним словом, online-казино является увлекательным заведением. У него удобный интерфейс, современный дизайн, яркие рекламные баннеры, обложки у игровых автоматов. . Есть возможность . Новички могут не сразу подтверждать свою личность. Для начала потренируются, а только потом, как дело дойдет до использования бонусов или вывода прибыли, можно верифицироваться. В интернет-клубе хорошо организована круглосуточная поддержка. Пользователи могут обратиться как в чат, так и на электронную почту. Сотрудники заведения делают все возможное, чтобы пользователям было легко и комфортно.</p>
+          <p>Сохранность и конфиденциальность информации о посетителях и их участии в игре Cabura находятся на высоком уровне.</p>
+          <p>Вся личная информация клиентов хранится в полном соответствии с правилами защиты персональных данных, которые не могут быть использованы в других целях, кроме идентификации аккаунта и личности игрока.</p>
+          <p>Сведения о ставках, выигрышах и финансовых расчетах защищены SSL-шифрованием и не могут быть доступны третьим лицам или организациям.</p>
+          <h2>Cash Out</h2>
+          <p>Cabura раз показывают, что они являются лидерами отрасли, если говорить об инновациях. «Редактировать ставку» дает вам возможность добавлять, заменять или удалять варианты неурегулированных спортивных ставок. Вы можете использовать эту опцию, чтобы полностью изменить тип ставки на любую применимую опцию. Изменение ставки доступно, когда Cash Out доступен для всех выборов и где ставки ожидают завершения. Если некоторые из ставок вашего экспресса уже установлены, у вас все еще есть возможность использовать редактирование.</p>
+          <p>Когда ставка будет отредактирована с использованием этой опции, ваша новая ставка будет равна текущему значению Cash Out ставки. Редактирование ставки предлагается только в рамках игр и рынков как в пред-игре, так и live для различных видов спорта.</p>
+          <h2>Преодоление блокировки сайта</h2>
+          <p>Деятельность онлайн-казино Cabura вполне легальна и подтверждена документально, однако случаи блокировки сайта нередки. Для возобновления доступа можно воспользоваться рабочим зеркалом, которое представляет собой точную копию сайта со всей его информацией, однако с другим доменом. Вход в зеркало ничем не отличается от входа на сайт, нужны те же логин и пароль. Результаты игр и другая статистика также доступны. Зеркало позволяет вести совершенно такую же игру, как и на сайте.</p>
+          <p>Актуальные адреса рабочих зеркал можно найти на форумах в социальных сетях или же запросить ссылку в техподдержке, отправив письмо по электронной почте.</p>
+          <p>Существуют и другие пути обхода блокировки. Можно зайти через VPN-сервис или же воспользоваться в браузере режимом «Турбо».</p>
+          <p>Так что блокировка и сбои – не повод отказываться от любимой игры. О возможности сохранения бесперебойного доступа позаботилось казино Cabura.</p>
+        </div>
+        <div style="display: contents;" id="mainView">
+          <div class="col-xs-12 col-lg-10 col-xl-10 mg-t-10">
+            <div class="card pd-b-15">
+              <div class="card-header pd-y-20 d-md-flex align-items-center justify-content-between d-none d-sm-block">
+                <h4 class="mg-b-0">Mines</h4>
+              </div>
+              <div class="row row-xs pd-20 mob-min">
+                <div class="col-xs-12 col-lg-5">
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active" id="handMines" role="tabpanel" aria-labelledby="home-tab5">
+                      <div class="d-none d-sm-block" id="mines">
+                        <h6 class="mg-b-15">Количество бомб:</h6><input class="js-range-slider mg-t-10 col-xs-6">
+                        <h6 class="mg-t-20">Размер игры:</h6>
+                        <div class="d-flex flex-row justify-content-center mg-b-15 mg-t-15 bg-gray-200 rounded-5">
+                          <div class="pd-10 bg-gray-200" style="border-top-left-radius:5px; border-bottom-left-radius:5px">
+                            <button onclick="$('#minesAmount').val($('#userBalance').attr('myBalance'));getMinesRate()" class="btn btn-secondary btn-icon tx-11 mg-t-3">MAX</button> <button onclick="$('#minesAmount').val('1');getMinesRate()" type="button" class="btn btn-secondary btn-icon tx-11 mg-t-3">MIN</button>
+                          </div>
+                          <div class="pd-10 bg-gray-200">
+                            <input value="1" id="minesAmount" onkeyup="getMinesRate()" style="max-width:133px" class="form-control justify-content-center align-self-center text-center" autocomplete="off" placeholder="Сумма">
+                          </div>
+                          <div class="pd-10 bg-gray-200" style="border-top-right-radius:5px; border-bottom-right-radius:5px">
+                            <button onclick="var x = ($('#minesAmount').val()*2);$('#minesAmount').val(parseFloat(x.toFixed(2)));getMinesRate()" type="button" class="btn btn-secondary btn-icon tx-11 mg-t-3">x2</button> <button onclick="$('#minesAmount').val(Math.max(($('#minesAmount').val()/2).toFixed(2), 1));getMinesRate()" type="button" class="btn btn-secondary btn-icon tx-11 mg-t-3">/2</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-none d-sm-block">
+                        <a id="buttonStartMines" href="#" class="btn btn-secondary btn-block pd-t-10 pd-b-10 tx-15" style="" onclick="createGameMines()">Начать игру</a> <a id="buttonFinishMines" href="#" class="btn btn-secondary btn-block mg-t-20 pd-t-10 pd-b-10 tx-15" style="display:none" onclick="finishMines()"></a>
+                      </div><button id="errorMines" style="padding: 11px; pointer-events: none; margin-top: 15px; display:none" class="btn btn-block tx-medium btn-la-mob bg-danger-dice tx-white bd-0 btn-sel-d mg-b-15"></button>
+                    </div>
+                    <div id="minesHashBlock" style="display:none">
+                      <div class="divider-text hash-mob mg-t-25">
+                        Hash игры
+                      </div>
+                      <div class="tx-color-03 tx-thin text-center hash-mob" id="minesHash"></div>
+                    </div>
+                    <div id="checkMines" style="display:none!important">
+                      <div class="justify-content-center mg-t-20 d-none d-sm-flex">
+                        <button id="checkBet" class="btn btn-outline-secondary justify-content-center" href="#checkModal" data-toggle="modal">Проверить игру</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-lg-7">
+                  <div id="mbl" class="disabled">
+                    <div class="d-flex justify-content-center">
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 rounded-lg mines-sq text-center" onclick="chGameMines($(this),1)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),2)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),3)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),4)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),5)"></div>
+                    </div>
+                    <div class="d-flex justify-content-center mg-t-10">
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 rounded-lg mines-sq text-center" onclick="chGameMines($(this),6)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),7)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),8)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),9)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),10)"></div>
+                    </div>
+                    <div class="d-flex justify-content-center mg-t-10">
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 rounded-lg mines-sq text-center" onclick="chGameMines($(this),11)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),12)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),13)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),14)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),15)"></div>
+                    </div>
+                    <div class="d-flex justify-content-center mg-t-10">
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 rounded-lg mines-sq text-center" onclick="chGameMines($(this),16)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),17)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),18)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),19)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),20)"></div>
+                    </div>
+                    <div class="d-flex justify-content-center mg-t-10">
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 rounded-lg mines-sq text-center" onclick="chGameMines($(this),21)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),22)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),23)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),24)"></div>
+                      <div class="wd-65 ht-65 bg-gray-100 bd bd-1 mg-l-10 rounded-lg mines-sq text-center" onclick="chGameMines($(this),25)"></div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <ul class="steps mg-t-20">
+                      <svg href="#carousel" data-slide="prev" viewbox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="carousel-control-prev tx-gray-400 css-i6dzq1 mg-t-20">
+                      <polyline points="15 18 9 12 15 6"></polyline></svg>
+                      <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                        <div class="carousel-inner pd-t-4 pd-b-2" id="minesRate">
+                          <div class="1 carousel-item active justify-content-center">
+                            <ul>
+                              <li class="1 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 1</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">1,14</span><span class="step-desc">x1.14</span>
+                                </div></a>
+                              </li>
+                              <li class="2 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 2</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">1,30</span><span class="step-desc">x1.3</span>
+                                </div></a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="3 carousel-item justify-content-center">
+                            <ul>
+                              <li class="3 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 3</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">1,49</span><span class="step-desc">x1.49</span>
+                                </div></a>
+                              </li>
+                              <li class="4 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 4</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">1,73</span><span class="step-desc">x1.73</span>
+                                </div></a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="5 carousel-item justify-content-center">
+                            <ul>
+                              <li class="5 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 5</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">2,02</span><span class="step-desc">x2.02</span>
+                                </div></a>
+                              </li>
+                              <li class="6 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 6</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">2,37</span><span class="step-desc">x2.37</span>
+                                </div></a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="7 carousel-item justify-content-center">
+                            <ul>
+                              <li class="7 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 7</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">2,82</span><span class="step-desc">x2.82</span>
+                                </div></a>
+                              </li>
+                              <li class="8 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 8</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">3,38</span><span class="step-desc">x3.38</span>
+                                </div></a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="9 carousel-item justify-content-center">
+                            <ul>
+                              <li class="9 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 9</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">4,11</span><span class="step-desc">x4.11</span>
+                                </div></a>
+                              </li>
+                              <li class="10 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 10</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">5,05</span><span class="step-desc">x5.05</span>
+                                </div></a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="11 carousel-item justify-content-center">
+                            <ul>
+                              <li class="11 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 11</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">6,32</span><span class="step-desc">x6.32</span>
+                                </div></a>
+                              </li>
+                              <li class="12 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 12</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">8,04</span><span class="step-desc">x8.04</span>
+                                </div></a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="13 carousel-item justify-content-center">
+                            <ul>
+                              <li class="13 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 13</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">10,45</span><span class="step-desc">x10.45</span>
+                                </div></a>
+                              </li>
+                              <li class="14 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 14</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">13,94</span><span class="step-desc">x13.94</span>
+                                </div></a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="15 carousel-item justify-content-center">
+                            <ul>
+                              <li class="15 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 15</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">19,17</span><span class="step-desc">x19.17</span>
+                                </div></a>
+                              </li>
+                              <li class="16 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 16</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">27,38</span><span class="step-desc">x27.38</span>
+                                </div></a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="17 carousel-item justify-content-center">
+                            <ul>
+                              <li class="17 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 17</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">41,07</span><span class="step-desc">x41.07</span>
+                                </div></a>
+                              </li>
+                              <li class="18 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 18</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">65,71</span><span class="step-desc">x65.71</span>
+                                </div></a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="19 carousel-item justify-content-center">
+                            <ul>
+                              <li class="19 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 19</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">115</span><span class="step-desc">x115</span>
+                                </div></a>
+                              </li>
+                              <li class="20 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 20</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">230</span><span class="step-desc">x230</span>
+                                </div></a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="21 carousel-item justify-content-center">
+                            <ul>
+                              <li class="21 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 21</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">575</span><span class="step-desc">x575</span>
+                                </div></a>
+                              </li>
+                              <li class="22 step-item bd bd-1 pd-10 rounded-5">
+                                <span class="st-bl" style="position:absolute; margin-top: -18px; margin-left: 4px; font-size: 10px; background:#fff; padding:2px 7px;">Шаг 22</span> <a class="step-link">
+                                <div style="margin-left:0;width:110px;align-items: center;">
+                                  <span class="step-title" style="">2 300</span><span class="step-desc">x2300</span>
+                                </div></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div><svg href="#carousel" data-slide="next" viewbox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="carousel-control-next tx-gray-400 css-i6dzq1 mg-t-20">
+                      <polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </ul>
+                  </div>
+                  <div class="col-12 d-block d-sm-none" style="padding:0">
+                    <div class="row row-xs mg-b-10" id="minesMobile">
+                      <div class="col-6">
+                        <span class="tx-11">Бомбы</span> <select class="custom-select text-center tx-20 mg-t-5" id="countBombMobile" onchange="getMinesRateMobile()" style="border-bottom-right-radius: 0;border-bottom-left-radius: 0;">
+                          <option value="2">
+                            2
+                          </option>
+                          <option value="3" selected>
+                            3
+                          </option>
+                          <option value="4">
+                            4
+                          </option>
+                          <option value="5">
+                            5
+                          </option>
+                          <option value="6">
+                            6
+                          </option>
+                          <option value="7">
+                            7
+                          </option>
+                          <option value="8">
+                            8
+                          </option>
+                          <option value="9">
+                            9
+                          </option>
+                          <option value="10">
+                            10
+                          </option>
+                          <option value="11">
+                            11
+                          </option>
+                          <option value="12">
+                            12
+                          </option>
+                          <option value="13">
+                            13
+                          </option>
+                          <option value="14">
+                            14
+                          </option>
+                          <option value="15">
+                            15
+                          </option>
+                          <option value="16">
+                            16
+                          </option>
+                          <option value="17">
+                            17
+                          </option>
+                          <option value="18">
+                            18
+                          </option>
+                          <option value="19">
+                            19
+                          </option>
+                          <option value="20">
+                            20
+                          </option>
+                          <option value="21">
+                            21
+                          </option>
+                          <option value="22">
+                            22
+                          </option>
+                          <option value="23">
+                            23
+                          </option>
+                          <option value="24">
+                            24
+                          </option>
+                        </select>
+                        <div style="margin-top: -1px;" class="btn-group tx-rubik d-flex justify-content-center">
+                          <button onclick="$('#countBombMobile').val($(this).html());getMinesRateMobile()" style="border-top-left-radius: 0; padding: 0;" class="tx-gray-600 btn btn-xs btn-white tx-13 mb-mines">2</button> <button onclick="$('#countBombMobile').val($(this).html());getMinesRateMobile()" style="border-top-right-radius: 0; padding: 0;" class="tx-gray-600 btn btn-xs btn-white tx-13 mb-mines">5</button> <button onclick="$('#countBombMobile').val($(this).html());getMinesRateMobile()" style="border-top-right-radius: 0; padding: 0;" class="tx-gray-600 btn btn-xs btn-white tx-13 mb-mines">14</button> <button onclick="$('#countBombMobile').val($(this).html());getMinesRateMobile()" style="border-top-right-radius: 0; padding: 4px 0;" class="tx-gray-600 btn btn-xs btn-white tx-13 mb-mines">21</button>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <span class="tx-11">Размер игры</span>
+                        <div class="input-group mg-t-5">
+                          <input value=" 1" id="minesAmountMobile" onkeyup="getMinesRateMobile()" class="form-control tx-20 justify-content-center align-self-center text-center" autocomplete="off" placeholder="Сумма" style="border-bottom-right-radius: 0;border-bottom-left-radius: 0">
+                        </div>
+                        <div style="margin-top: -1px;" class="btn-group tx-rubik d-flex justify-content-center">
+                          <button onclick="$('#minesAmountMobile').val($('#userBalance').attr('myBalance'));$('#minesAmount').val($('#userBalance').attr('myBalance'));getMinesRateMobile();" style="border-top-left-radius: 0; padding: 0;" class="tx-gray-600 btn btn-xs btn-white tx-13 mb-mines">Max</button> <button onclick="$('#minesAmountMobile').val('1');$('#minesAmount').val('1');getMinesRateMobile()" style="border-top-right-radius: 0; padding: 0;" class="tx-gray-600 btn btn-xs btn-white tx-13 mb-mines">Min</button> <button onclick="var x = ($('#minesAmountMobile').val()*2);$('#minesAmountMobile').val(parseFloat(x.toFixed(2)));$('#minesAmount').val(parseFloat(x.toFixed(2)));getMinesRateMobile()" style="border-top-right-radius: 0; padding: 0;" class="tx-gray-600 btn btn-xs btn-white tx-13 mb-mines">x2</button> <button onclick="$('#minesAmountMobile').val(Math.max(($('#minesAmountMobile').val()/2).toFixed(2), 1));$('#minesAmount').val(Math.max(($('#minesAmountMobile').val()/2).toFixed(2), 1));getMinesRateMobile()" style="border-top-right-radius: 0; padding: 4px 0;" class="tx-gray-600 btn btn-xs btn-white tx-13 mb-mines">/2</button>
+                        </div>
+                      </div>
+                    </div><a id="buttonStartMinesMobile" href="#" class="btn btn-secondary btn-block tx-12" style="" onclick="createGameMinesMobile()">Начать игру</a> <a id="buttonFinishMinesMobile" href="#" class="btn btn-secondary btn-block tx-12" style="display:none" onclick="finishMines()"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mg-b-10 mg-t-10 hash-mob">
+              <div class="card-header pd-t-20 d-sm-flex align-items-start justify-content-between bd-b-0 pd-b-0">
+                <div>
+                  <h6 class="mg-b-5">История</h6>
+                  <p class="tx-13 tx-color-03 mg-b-0"></p>
+                </div>
+                <div class="d-flex mg-t-20 mg-sm-t-0">
+                  <div class="btn-group flex-fill">
+                    <button class="btn btn-white btn-xs bt-table active" onclick="$('.bt-table').removeClass('active'); $(this).addClass('active'); $('#myresponse').hide(); $('#response').show();">Все игры</button> <button class="btn btn-white btn-xs bt-table" onclick="$('.bt-table').removeClass('active'); $(this).addClass('active'); $('#response').hide(); $('#myresponse').show();">Мои игры</button>
+                  </div>
+                </div>
+              </div>
+              <div class="table-responsive mg-t-20 mg-b-15">
+                <table class="table table-dashboard mg-b-0 table-live">
+                  <thead>
+                    <tr>
+                      <th class="text-center wd-10p">Игра</th>
+                      <th class="text-center wd-20p">Логин</th>
+                      <th class="text-center wd-25p">Сумма</th>
+                      <th class="text-center wd-20p">Коэффициент</th>
+                      <th class="text-center wd-25p">Результат</th>
+                    </tr>
+                  </thead>
+                  <tbody id="response">
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                  </tbody>
+                  <tbody id="myresponse" style="display:none;border-top: 0;">
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                    <tr style="color: transparent !important;">
+                      <td class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box" style="margin-top: -4px;margin-right: 3px;">
+                        <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
+                        <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                        <line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                      </td>
+                      <td class="text-center">Login123</td>
+                      <td class="text-center">1,00</td>
+                      <td class="text-center">1.22</td>
+                      <td class="text-center tx-semibold">1,55</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <script>
+            updateResultSize()
+            </script>
+          </div>
+          <div class="modal fade" id="modalSignIn" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered wd-sm-400" role="document">
+              <div class="modal-content">
+                <div class="modal-body pd-20 pd-sm-40">
+                  <a href="" role="button" class="close pos-absolute t-15 r-15" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></a>
+                  <div>
+                    <h4>Авторизация</h4>
+                    <p class="tx-color-03 tx-thin"></p><a href="/vk.php" class="btn btn-outline-facebook btn-block mg-b-15"><i class="ion ion-logo-vk"></i> Войти через Вконтакте</a>
+                    <div class="form-group">
+                      <label>Логин</label> <input id="userLogin" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <div class="d-flex justify-content-between mg-b-5">
+                        <label class="mg-b-0-f">Пароль</label>
+                      </div><input id="userPass" type="password" class="form-control" placeholder="">
+                    </div>
+                    <div style="transform: scale(0.75);margin-top: -17px;" class="g-recaptcha justify-content-center align-self-center" data-sitekey="6LeelqAUAAAAANC5GR_WWHaMeDH45EPA6gTZ1WAk"></div>
+                    <div id="error_enter" class="alert alert-danger tx-center tx-red" role="alert" style="color: rgb(219, 52, 69);padding: 9px;display:none"></div><button id="butEnter" class="btn btn-primary btn-block" onclick="login()">Войти</button>
+                    <div class="tx-13 mg-t-20 tx-center">
+                      Нет аккаунта? <a data-dismiss="modal" aria-label="Close" href="#modalSignUp" data-toggle="modal">Создать аккаунт</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered wd-sm-400" role="document">
+              <div class="modal-content">
+                <div class="modal-body pd-20 pd-sm-40">
+                  <a href="" role="button" class="close pos-absolute t-15 r-15" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></a>
+                  <div>
+                    <h4>Создание аккаунта</h4>
+                    <div class="form-group">
+                      <label>Логин</label> <input id="userRegsiter" type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label>Пароль</label> <input id="userPassRegister" type="password" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label>Повторите пароль</label> <input id="userPassRegister1" type="password" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      Создавая аккаунт, вы соглашаетесь с <a href="/terms.php" target="_blanc">пользовательским соглашением</a> и <a href="/policy.php" target="_blanc">политикой конфеденциальности</a>.
+                    </div>
+                    <div style="transform: scale(0.75);margin-top: -17px;" class="g-recaptcha justify-content-center align-self-center" data-sitekey="6LeelqAUAAAAANC5GR_WWHaMeDH45EPA6gTZ1WAk"></div>
+                    <div id="error_register" class="alert alert-danger tx-center tx-red" role="alert" style="color: rgb(219, 52, 69);padding: 9px;display:none"></div><button id="butRegister" onclick="register()" class="btn btn-primary btn-block">Создать аккаунт</button>
+                    <div class="tx-13 mg-t-20 tx-center">
+                      Есть аккаунт? <a data-dismiss="modal" aria-label="Close" href="#modalSignIn" data-toggle="modal">Войти</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+                                    
+                                    function login() {
+                                if ($('#userLogin').val().length < 4) {
+                                    $('#error_enter').css('display', 'block');
+                                    return $('#error_enter').html('Логин от 4 символов');
+                                }
+                                if ($('#userPass').val() == '') {
+                                    $('#error_enter').css('display', 'block');
+                                    return $('#error_enter').html('Введите пароль');
+                                }
+
+                                if ($('#g-recaptcha-response').val() == '') {
+                                    $('#error_enter').css('display', 'block');
+                                    return $('#error_enter').html('Поставьте галочку');
+                                }
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '/action.php',
+                                    beforeSend: function() {
+                                        
+                                        $('#butEnter').html('<div class="spinner-border spinner-border-sm tx-white link-03 tx-medium tx-spacing--0 tx-10"></div>');
+                                        $('#butEnter').addClass('disabled');
+                                        $('#error_enter').hide();
+                                        
+                                    },
+                                    data: {
+                                        type: "login",
+                                        login: $('#userLogin').val(),
+                                        rc: $('#g-recaptcha-response').val(),
+                                        pass: $('#userPass').val()
+                                    },
+                                    success: function(data) {
+                                        
+                                
+
+                                        var obj = jQuery.parseJSON(data);
+                                        if ('success' in obj) {
+                                            Cookies.set('sid', obj.success.sid, { expires: 365,path: '/',secure:true });
+                                            Cookies.set('login', $('#userLogin').val(), { expires: 365,path: '/',secure:true });
+                                            window.location.href = '';
+                                            // return false;
+                                        }else{
+                                            $('#butEnter').html('Войти');
+                                        $('#butEnter').removeClass('disabled');
+                                            grecaptcha.reset();
+                                       
+                                        $('#error_enter').html(obj.error);
+                                        $('#error_enter').css('display', 'block');
+                                        }
+
+
+                                    }
+                                });
+                            }
+                            
+                            function register() {
+                                if ($('#userRegsiter').val().length < 4) {
+                                    $('#error_register').css('display', 'block');
+                                    return $('#error_register').html('Логин от 4 символов');
+                                }
+                                if ($('#userPassRegister').val() == '') {
+                                    $('#error_register').css('display', 'block');
+                                    return $('#error_register').html('Введите пароль');
+                                }
+                                if ($('#userPassRegister1').val() !== $('#userPassRegister').val()) {
+                                    $('#error_register').css('display', 'block');
+                                    return $('#error_register').html('Пароли не совпадают');
+                                }
+                            
+
+                                if ($('#g-recaptcha-response-1').val() == '') {
+                                    $('#error_register').css('display', 'block');
+                                    return $('#error_register').html('Поставьте галочку');
+                                }
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '/action.php',
+                                    beforeSend: function() {
+                                        $('#butRegister').html('<div class="spinner-border spinner-border-sm tx-white link-03 tx-medium tx-spacing--0 tx-10"></div>').addClass('disabled');
+                                        $('#error_register').hide();
+                                    },
+                                    data: {
+                                        type: "register",
+                                        login: $('#userRegsiter').val(),
+                                        ref: Cookies.get('ref'),
+                                        rc: $('#g-recaptcha-response-1').val(),
+                                        pass: $('#userPassRegister').val()
+                                    },
+                                    success: function(data) {
+                                        $('#butRegister').html('Зарегистрироваться').removeClass('disabled');
+                                        $('#error_register').hide();
+                                        var obj = jQuery.parseJSON(data);
+                                        if ('success' in obj) {
+                                            Cookies.set('sid', obj.success.sid, { expires: 365,path: '/',secure:true });
+                                            Cookies.set('login', $('#userLogin').val(), { expires: 365,path: '/',secure:true });
+                                            window.location.href = '';
+                                            // return false;
+                                        }else{
+                                            grecaptcha.reset(1);
+                                       
+                                        $('#error_register').html(obj.error);
+                                        $('#error_register').show();
+                                        }
+
+
+                                    }
+                                });
+                            }
+                        
+                                    
+                                    
+                                    
+    </script> 
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
+    <script src="/files/js.js"></script> 
+    <script src="/files/dfg_002.js"></script>
+    <div class="modal fade" id="firstBonus" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered wd-sm-400" role="document">
+        <div class="modal-content">
+          <div class="modal-body pd-20 pd-sm-40">
+            <a href="" role="button" class="close pos-absolute t-15 r-15" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></a>
+            <div id="wizard1" role="application" class="wizard clearfix">
+              <div class="steps clearfix align-items-center justify-content-center">
+                <ul role="tablist">
+                  <li role="tab" class="first current" aria-disabled="false" aria-selected="true">
+                    <a id="wizard1-t-0" href="#wizard1-h-0" aria-controls="wizard1-p-0"><span class="current-info audible">current step:</span> <span class="number">1</span></a>
+                  </li>
+                  <li role="tab" class="disabled" aria-disabled="true">
+                    <a id="wizard1-t-1" href="#wizard1-h-1" aria-controls="wizard1-p-1"><span class="number">2</span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="content clearfix" style="min-height:0!important">
+                <h3 id="wizard1-h-0" tabindex="-1" class="title current tx-center">Привяжите аккаунт Вконтакте</h3>
+              </div>
+              <div class="actions">
+                <a href="/vk.php" class="tx-center"><i class="ion ion-logo-vk"></i> Привязать</a>
+              </div>
+            </div>
+            <center id="xrqexr" style="font-size:11px;margin-top: 15px;opacity:0.5;cursor:pointer;" onclick="hideBonus()">
+              Больше не показывать предложение
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        
+        function getBonus() {
+
+                $.ajax({
+                                            type: 'POST',
+                                            url: '/action.php',
+                                             beforeSend: function(data) {
+                                                        $('#bonBut').addClass('disabled');
+                                                    },
+                                            data: {
+                                                type: 'getBonus',
+                                                sid: Cookies.get('sid'),
+                                                a:  Cookies.get('ab')
+                                            },
+                                            success: function(data) {
+                                                $('#error_bonuss1').hide();
+                                                $('#bonBut').removeClass('disabled');
+                                             var obj = jQuery.parseJSON(data);
+                                                if ('success' in obj) {
+                                                    $('#firstBonus').modal('toggle');
+                                                    $(".absh").hide();
+                                                        updateBalance(obj.success.balance, obj.success.new_balance);
+                                                         updateBalanceMobile(obj.success.balance, obj.success.new_balance);
+                                                
+                                                    return;
+                                                   
+                                                } 
+                                                if ('error' in obj) {
+                                                    $('#error_bonuss1').show();
+                                                    return $('#error_bonuss1').html(obj.error.text);
+                                                }
+                                            }
+                                        });
+               
+                    
+            }
+            
+            function hideBonus() {
+                        $.ajax({
+                            type: 'POST',
+                            url: '/action.php',
+                            data: {
+                                type: "hideBonus",
+                                sid: Cookies.get('sid'),
+                            },
+                            success: function(data) {
+                                var obj = jQuery.parseJSON(data);
+                                if ('success' in obj) {
+                                    $('#firstBonus').modal('toggle');
+                                }
+                            }
+                        });
+                    }
+            
+        
+        
+    </script>
+    <div class="modal fade" id="userSettings" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body pd-x-25 pd-sm-x-30 pd-t-40 pd-sm-t-20 pd-b-15 pd-sm-b-20">
+            <a href="" role="button" class="close pos-absolute t-15 r-15" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></a>
+            <div class="nav-wrapper mg-b-20 tx-13">
+              <div>
+                <nav class="nav nav-line tx-medium">
+                  <a href="#performance" class="nav-link active" data-toggle="tab">Настройки</a>
+                </nav>
+              </div>
+            </div>
+            <div class="tab-content">
+              <div id="performance" class="tab-pane fade active show">
+                <h6>Темная тема</h6>
+                <div class="row row-xs mg-t-15">
+                  <div class="col-lg-4">
+                    <div class="d-md-flex">
+                      <div id="fnWrapper" class="parsley-input">
+                        <div class="custom-control custom-switch">
+                          <input autocomplete="off" type="checkbox" class="custom-control-input" id="customSwitch1" onchange="Cookies.set('tm','1');location.reload();"><label class="custom-control-label" for="customSwitch1" style="color:transparent">A</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <h6>Смена пароля</h6>
+                <div class="row row-xs mg-t-15">
+                  <div class="col-lg-4">
+                    <div class="d-md-flex">
+                      <div id="fnWrapper" class="parsley-input">
+                        <input type="password" id="resetPass" name="firstname" class="form-control" placeholder="Старый пароль" autocomplete="off" data-parsley-class-handler="#fnWrapper" required="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="d-md-flex">
+                      <div id="lnWrapper" class="parsley-input">
+                        <input type="password" id="resetPassRepeat" name="lastname" class="form-control" placeholder="Новый пароль" autocomplete="off" data-parsley-class-handler="#lnWrapper" required="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <button onclick="resetPass()" class="btn btn-block btn-primary tx-normal rpbss">Сохранить</button>
+                  </div><span id="error_resetPass" class="tx-danger mg-t-15" style="display:none">Пароль</span> <span id="succes_resetPass" class="tx-success mg-t-15" style="display:none">Пароль изменен</span> 
+                  <script>
+
+
+
+                                        function resetPass() {
+                                                                                if ($('#resetPass').val() == ''){
+                                                                                $('#error_resetPass').show();
+                                                                                return $('#error_resetPass').html('Введите пароль');
+                                                                                }
+                                                                                if ($('#resetPass').val().length < 5){
+                                                                                $('#error_resetPass').show();
+                                                                                return $('#error_resetPass').html('Пароль от 5 символов');
+                                                                                }
+                                                                        if ($('#resetPass').val() != $('#resetPassRepeat').val()){
+                                                                                $('#error_resetPass').show();
+                                                                                return $('#error_resetPass').html('Пароли не совпадают');
+                                                                        }
+                                                                        $.ajax({
+                                        type: 'POST',
+                                        url: 'action.php',
+                                                                                beforeSend: function() {
+                                                                                    $('.rpbss').addClass("disabled");
+                                                                                        $('#error_resetPass').hide();
+                                                                                        $('#succes_resetPass').hide();
+                                                                                },      
+                                        data: {
+                                            type: "resetPassPanel",
+                                            sid: Cookies.get('sid'),
+                                            newPass: $('#resetPass').val()
+                                        },
+                                        success: function(data) {
+                                            $('.rpbss').removeClass("disabled");
+                                            var obj = jQuery.parseJSON(data);
+                                            if ('success' in obj) {
+                                               $("#succes_resetPass").show();
+                                                                                          Cookies.set('sid', obj.success.sid, { path: '/',secure:true });
+                                                                                                                                                                                 return false;
+                                            }else{
+                                                                                                $('#error_resetPass').show();
+                                                                                                return $('#error_resetPass').html(obj.error.text);
+                                                                                        }
+                                        }
+                                    });
+                                    
+                                }
+                  </script>
+                </div>
+                <hr>
+                <h6 class="d-none">Аккаунт Вконтакте</h6>
+                <div class="row row-xs mg-t-15 d-none">
+                  <div class="col-lg-4">
+                    <div class="d-md-flex">
+                      <div id="fnWrapper" class="parsley-input">
+                        <a href="" target="_blank">https://werwr.wrer</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row row-xs mg-t-15">
+                  <div class="col-lg-12">
+                    <div class="d-md-flex">
+                      <button type="submit" class="btn btn-outline-primary btn-block tx-normal" onclick="Cookies.remove('sid');location.href = '';">Выйти из аккаунта</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="checkModal" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true" onclick="22">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body pd-x-25 pd-sm-x-30 pd-t-40 pd-sm-t-20 pd-b-15 pd-sm-b-20">
+            <div class="text-center">
+              <div class="spinner-border"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+                                    
+                                    $("#checkModal").on('hide.bs.modal', function(){
+      history.pushState(null, null, '/');
+      });
+
+      </script>
+    </div>
+    <div class="modal fade" id="depositModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content tx-14">
+          <div class="modal-header">
+            <h4 class="mg-b-5">Пополнение баланса</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group mg-b-5">
+              <label class="tx-normal la-mob">Выберите платежную систему:</label>
+            </div>
+            <div class="d-none d-sm-flex flex-row justify-content-start">
+              <div class="wd-150 ht-65 bg-gray-100 btn-deposit d-inline-flex align-items-center justify-content-center" onclick="$('#depositSystem').val('3'); $('.btn-deposit').removeClass('bd-gray-500 bd-1 bd') ;$(this).addClass('bd-gray-500 bd-1 bd')">
+                <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="80" viewbox="0 0 29.573537 13.433727" version="1.1">
+                <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-48.845523,-338.5318)">
+                  <g id="g5493" transform="matrix(0.26458333,0,0,0.26458333,48.943684,337.05093)" style="fill:none">
+                    <path class="qdt" id="path5489" d="m 54.406,34.313 h 1.737 v 3.893 h 1.255 l 2.252,-3.893 h 1.899 l -2.703,4.569 v 0.032 L 61.71,43.9 H 59.747 L 57.43,39.717 H 56.176 V 43.9 h -1.738 v -9.588 h -0.032 z m 11.197,2.542 c 2.09,0 3.796,1.512 3.796,3.603 0,2.124 -1.673,3.604 -3.764,3.604 -2.092,0 -3.765,-1.48 -3.765,-3.604 -0.032,-2.123 1.641,-3.603 3.733,-3.603 z m 5.147,0.16 h 1.641 v 5.406 h 2.156 v -5.405 h 1.64 v 5.405 h 2.156 v -5.405 h 1.641 V 43.9 h -9.17 v -6.885 z m 14.093,-0.16 c 1.962,0 3.056,1.448 3.056,3.25 a 4.8,4.8 0 0 1 -0.064,0.675 h -4.73 c 0.097,1.19 1.03,1.834 2.06,1.834 0.707,0 1.415,-0.322 1.962,-0.74 l 0.676,1.223 c -0.708,0.61 -1.77,0.997 -2.767,0.997 -2.285,0 -3.7,-1.641 -3.7,-3.604 0,-2.155 1.447,-3.635 3.507,-3.635 z m 3.86,5.598 c 0.837,-0.129 1.448,-0.836 1.448,-3.282 v -2.155 h 5.02 V 43.9 h -1.706 v -5.502 h -1.673 v 0.772 c 0,2.992 -0.804,4.73 -3.089,4.794 v -1.512 z m 11.358,-5.598 c 1.962,0 3.056,1.448 3.056,3.25 a 4.8,4.8 0 0 1 -0.064,0.675 h -4.73 c 0.097,1.19 1.03,1.834 2.06,1.834 0.707,0 1.415,-0.322 1.962,-0.74 l 0.676,1.223 c -0.708,0.61 -1.77,0.997 -2.767,0.997 -2.284,0 -3.7,-1.641 -3.7,-3.604 0,-2.155 1.448,-3.635 3.507,-3.635 z m 4.472,0.16 h 1.705 v 2.639 h 0.837 l 1.673,-2.638 h 1.898 l -2.188,3.281 v 0.033 l 2.445,3.57 h -1.994 l -1.802,-2.798 h -0.9 V 43.9 H 104.5 v -6.885 h 0.032 z m -38.93,5.567 c 1.126,0 2.059,-0.869 2.059,-2.156 0,-1.255 -0.933,-2.156 -2.06,-2.156 -1.125,0 -2.026,0.87 -2.026,2.156 0,1.287 0.9,2.156 2.027,2.156 z M 86.162,39.59 c 0,-0.901 -0.612,-1.448 -1.384,-1.448 -0.868,0 -1.512,0.579 -1.673,1.448 z m 15.218,0 c 0,-0.901 -0.611,-1.448 -1.383,-1.448 -0.87,0 -1.513,0.579 -1.674,1.448 z" inkscape:connector-curvature="0" style="fill:#2d3540"></path>
+                    <path id="path5491" d="M 78.44,13.432 V 29.68 a 0.44,0.44 0 0 1 -0.45,0.45 h -3.314 a 0.44,0.44 0 0 1 -0.45,-0.45 V 13.432 a 0.44,0.44 0 0 1 0.45,-0.45 h 3.314 a 0.44,0.44 0 0 1 0.45,0.45 z m 25.868,-0.45 c 0.129,0 0.29,0.064 0.45,0.193 0.097,0.096 0.097,0.257 0.065,0.386 l -5.47,16.28 a 0.458,0.458 0 0 1 -0.418,0.29 h -2.96 c -0.193,0 -0.354,-0.097 -0.418,-0.29 L 92.37,20.35 89.185,29.84 a 0.458,0.458 0 0 1 -0.418,0.29 h -2.96 c -0.193,0 -0.354,-0.096 -0.418,-0.29 l -5.47,-16.28 c -0.032,-0.128 -0.032,-0.257 0.064,-0.385 0.065,-0.129 0.226,-0.193 0.354,-0.193 h 3.7 c 0.193,0 0.354,0.128 0.419,0.321 l 2.927,9.62 3.218,-9.62 a 0.458,0.458 0 0 1 0.418,-0.29 h 2.606 c 0.193,0 0.354,0.097 0.418,0.29 l 3.218,9.62 2.928,-9.62 a 0.444,0.444 0 0 1 0.418,-0.321 h 3.7 z m 5.598,0 c 0.225,0 0.418,0.193 0.45,0.45 V 29.68 a 0.44,0.44 0 0 1 -0.45,0.45 h -3.314 a 0.44,0.44 0 0 1 -0.45,-0.45 V 13.432 a 0.44,0.44 0 0 1 0.45,-0.45 z m -37.611,16.57 c 0.193,0.225 0.032,0.546 -0.258,0.546 H 67.983 A 0.519,0.519 0 0 1 67.565,29.905 L 66.89,29.069 c -1.416,0.9 -3.09,1.448 -4.859,1.448 -4.954,0 -8.976,-4.022 -8.976,-8.977 0,-4.955 4.022,-8.977 8.976,-8.977 4.955,0 8.977,4.022 8.977,8.977 0,1.77 -0.515,3.443 -1.416,4.858 l 2.703,3.153 z m -33.88,7.882 c 0.837,0.322 1.159,1.576 1.223,2.123 0.129,0.998 -0.16,1.384 -0.482,1.384 -0.322,0 -0.773,-0.386 -1.255,-1.158 -0.483,-0.773 -0.676,-1.641 -0.418,-2.092 0.16,-0.29 0.514,-0.418 0.933,-0.257 z m -4.89,3.636 c 0.515,0 1.094,0.225 1.609,0.675 0.997,0.837 1.287,1.802 0.772,2.51 -0.29,0.354 -0.772,0.579 -1.319,0.579 -0.547,0 -1.126,-0.193 -1.512,-0.547 -0.901,-0.772 -1.158,-2.06 -0.58,-2.767 0.226,-0.29 0.58,-0.45 1.03,-0.45 z m -11.26,9.298 c -12.227,0 -22.136,-9.91 -22.136,-22.136 0,-12.226 9.91,-22.135 22.135,-22.135 12.226,0 22.136,9.91 22.136,22.135 0,4.15 -1.158,8.044 -3.12,11.358 -0.065,0.096 -0.226,0.064 -0.258,-0.065 -0.772,-5.437 -4.086,-8.43 -8.912,-9.33 -0.419,-0.065 -0.483,-0.322 0.064,-0.386 1.48,-0.129 3.571,-0.097 4.665,0.096 0.064,-0.547 0.097,-1.126 0.097,-1.705 0,-8.076 -6.564,-14.64 -14.64,-14.64 -8.075,0 -14.639,6.564 -14.639,14.64 0,8.076 6.564,14.64 14.64,14.64 h 0.675 a 19.749,19.749 0 0 1 -0.29,-3.958 c 0.033,-0.901 0.226,-1.03 0.612,-0.322 2.027,3.507 4.923,6.66 10.585,7.915 4.633,1.03 9.266,2.22 14.253,8.558 0.45,0.547 -0.225,1.126 -0.74,0.676 -5.083,-4.505 -9.716,-5.985 -13.931,-5.985 -4.73,0.033 -7.947,0.644 -11.197,0.644 z m 41.986,-24.42 -1.77,-2.156 c -0.192,-0.225 -0.031,-0.579 0.258,-0.579 h 3.732 c 0.193,-0.515 0.29,-1.094 0.29,-1.673 0,-2.67 -1.995,-4.987 -4.73,-4.987 -2.734,0 -4.73,2.317 -4.73,4.987 0,2.67 1.996,4.955 4.73,4.955 0.772,0.032 1.545,-0.193 2.22,-0.547 z" inkscape:connector-curvature="0" style="fill:#ff8c00"></path>
+                  </g>
+                </g></svg>
+              </div>
+              <div class="wd-150 ht-65 bg-gray-100 mg-l-5 btn-deposit d-inline-flex align-items-center justify-content-center" onclick="$('#depositSystem').val('2'); $('.btn-deposit').removeClass('bd-gray-500 bd-1 bd') ;$(this).addClass('bd-gray-500 bd-1 bd')">
+                <svg width="80" height="38" viewbox="0 0 160 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="qdt qdt1" d="M136.851 36.6707C136.851 33.4144 136.851 30.1772 136.851 26.9209C136.851 19.1005 136.851 11.2801 136.851 3.45991V2.05076C141.312 2.22208 145.696 1.59364 149.961 2.86958C151.962 3.40809 153.723 4.57671 154.969 6.19255C156.216 7.80839 156.877 9.78059 156.849 11.8006C157.007 13.9038 156.443 15.9984 155.246 17.7561C154.05 19.5137 152.287 20.8351 150.235 21.5126L149.022 21.9316L155.265 30.3295C156.849 32.4623 158.414 34.6141 160 36.766H153.386C153.398 36.6968 153.398 36.6258 153.386 36.5566C150.157 32.0433 146.928 27.5302 143.602 23.0551C143.407 22.7695 142.897 22.6933 142.349 22.4457V36.766L136.851 36.6707ZM142.448 6.69722V17.9134C144.555 18.1033 146.677 17.7895 148.63 16.9995C149.573 16.5642 150.363 15.869 150.904 15.0002C151.443 14.1313 151.708 13.1273 151.668 12.1128C151.626 11.0984 151.279 10.1182 150.669 9.2942C150.06 8.4702 149.214 7.83856 148.24 7.47793C146.399 6.77374 144.414 6.50608 142.448 6.69722Z" fill="#637388"></path>
+                <path class="qdtP" d="M20.4255 36.6705C20.4497 36.3847 20.5073 36.1028 20.5965 35.8306L37.1056 0.725464C37.2025 0.515373 37.3553 0.305434 37.5262 0L43.2591 12.7897L53.4816 35.5824C53.6102 35.9372 53.7131 36.3009 53.7872 36.6705H48.1692C47.0422 34.0934 45.9531 31.4973 44.7884 28.9202C44.6886 28.7793 44.5599 28.6607 44.4117 28.5719C44.2635 28.4832 44.0987 28.4263 43.9277 28.4048C39.4185 28.4048 34.9092 28.4048 30.4 28.4048C30.2396 28.415 30.0839 28.4616 29.9447 28.5411C29.8056 28.6204 29.6861 28.7305 29.5968 28.863C28.3928 31.4782 27.228 34.1316 26.0617 36.766L20.4255 36.6705ZM42.418 23.3081L37.2781 11.6062L31.9474 23.3081H42.418Z" fill="#637388"></path>
+                <path class="qdt qdt1" d="M83.7447 36.7277C83.7447 34.469 83.7447 32.2103 83.7447 29.9323C83.7447 21.0889 83.7447 12.2516 83.7447 3.42092V2.0426H103.45V6.94303H89.3607V15.7291H103.154V20.7826H89.3607V31.7508H103.489V36.766L83.7447 36.7277Z" fill="#637388"></path>
+                <path class="qdt qdt1" d="M110.298 36.7277C110.298 34.469 110.298 32.2103 110.298 29.9323C110.298 21.0889 110.298 12.2516 110.298 3.42092V2.0426H130.003V6.94303H115.914V15.7291H129.709V20.7826H115.914V31.7508H130.043V36.766L110.298 36.7277Z" fill="#637388"></path>
+                <path class="qdtP" d="M0 2.07118C3.70553 2.07118 7.43086 1.91825 11.0969 2.31995C13.5302 2.56168 15.7797 3.71949 17.3862 5.55717C18.9913 7.39484 19.8318 9.77369 19.7375 12.2081C19.8226 14.6387 19.0003 17.0143 17.4287 18.8759C15.8571 20.7376 13.6503 21.9531 11.2321 22.2876C9.31249 22.6128 7.39127 22.6128 5.47162 22.7657V36.766H0V2.07118ZM5.47162 17.6973C7.58429 17.9587 9.73046 17.7161 11.7307 16.9897C12.6654 16.5829 13.4481 15.8923 13.9649 15.0164C14.4816 14.1404 14.7081 13.124 14.6108 12.1124C14.6701 11.1014 14.3996 10.0985 13.8387 9.2538C13.2779 8.4089 12.4572 7.76792 11.5012 7.42653C9.55263 6.82459 7.49918 6.62925 5.47162 6.85276V17.6973Z" fill="#637388"></path>
+                <path class="qdtP" d="M63.2962 36.766C63.2962 32.1508 63.2962 27.5356 63.2962 22.9205C63.2777 22.185 63.0772 21.4648 62.7117 20.8226C59.3223 14.9868 55.8743 9.18909 52.4463 3.3724C52.232 3.01002 52.0361 2.64778 51.7447 2.11381C53.6923 2.11381 55.6399 2.11381 57.4904 2.11381C57.7834 2.11381 58.1334 2.51421 58.3092 2.81936C60.7056 6.82425 63.0618 10.8484 65.4381 14.8724L66.0611 15.8832L68.166 12.3359C70.0165 9.20817 71.8669 6.09963 73.6587 2.95293C73.7944 2.64992 74.0289 2.39851 74.3234 2.23685C74.6195 2.0752 74.9603 2.01185 75.2949 2.05657C76.911 2.05657 78.5486 2.05657 80.3404 2.05657C80.0675 2.55238 79.8917 2.89568 79.6974 3.21991C76.217 9.132 72.7366 15.0377 69.2562 20.9369C69.0018 21.3204 68.8476 21.7593 68.8091 22.2148C68.8091 27.0398 68.8091 31.8648 68.8091 36.7089L63.2962 36.766Z" fill="#637388"></path></svg>
+              </div>
+              <div class="wd-150 ht-65 bg-gray-100 mg-l-5 btn-deposit d-inline-flex align-items-center justify-content-center" onclick="$('#depositSystem').val('2'); $('.btn-deposit').removeClass('bd-gray-500 bd-1 bd') ;$(this).addClass('bd-gray-500 bd-1 bd')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" viewbox="0 0 143.49 40">
+                <defs></defs>
+                <title>advcash</title>
+                <path class="cls-1 qdt" d="M9.17,27A6.29,6.29,0,0,1,5,28.62a4.67,4.67,0,0,1-5-4.77,4.05,4.05,0,0,1,2.57-4,11.88,11.88,0,0,1,3.85-.92L9,18.72v-.55c0-1.65-1.1-2.39-2.94-2.39a8.6,8.6,0,0,0-3.85,1.1L.92,14.5A12.49,12.49,0,0,1,6.61,13c4,0,5.87,1.83,5.87,5.32V24.4a11.36,11.36,0,0,0,.37,3.85H9.72Zm-2.39-5.5a3.91,3.91,0,0,0-2.2.55,1.93,1.93,0,0,0-.92,1.65,2,2,0,0,0,2.2,2,4.9,4.9,0,0,0,2.94-1.1V21.47Z"></path>
+                <path class="cls-1 qdt" d="m14.68 21.1c0-4.77 3.49-7.89 8.07-7.89a7.53 7.53 0 0 1 2 0.18v-7.15h3.67v21.47a13.41 13.41 0 0 1-5.5 1.1c-4.57-0.19-8.24-2.75-8.24-7.71zm10.09 4.22v-8.81a5.66 5.66 0 0 0-1.83-0.18 4.48 4.48 0 0 0-4.59 4.77 4.24 4.24 0 0 0 4.59 4.59c0.55-0.19 1.28-0.19 1.83-0.37z"></path>
+                <path class="cls-1 qdt" d="m29.72 13.58h3.85l3.67 10.09 3.67-10.09h3.67l-6.05 14.86h-2.75z"></path>
+                <path class="cls-2" d="M45.14,21.1A7.72,7.72,0,0,1,53,13.21a10.07,10.07,0,0,1,4,.92v3.12a6.2,6.2,0,0,0-3.67-1.1c-2.75,0-4.4,2-4.4,4.77,0,3.12,1.65,4.77,4.22,4.77a7,7,0,0,0,3.49-.92l1.1,2.57a10,10,0,0,1-5.14,1.47A7.37,7.37,0,0,1,45.14,21.1Z"></path>
+                <path class="cls-2" d="M67.52,27a6.29,6.29,0,0,1-4.22,1.65,4.67,4.67,0,0,1-5-4.77,4.05,4.05,0,0,1,2.57-4,11.88,11.88,0,0,1,3.85-.92l2.57-.18v-.55c0-1.65-1.1-2.39-2.94-2.39a8.6,8.6,0,0,0-3.85,1.1L59.27,14.5A12.49,12.49,0,0,1,65,13c4,0,5.87,1.83,5.87,5.32V24.4a11.36,11.36,0,0,0,.37,3.85H68.07Zm-2.39-5.5a3.91,3.91,0,0,0-2.2.55A1.93,1.93,0,0,0,62,23.67a2,2,0,0,0,2.2,2,4.9,4.9,0,0,0,2.94-1.1V21.47Z"></path>
+                <path class="cls-2" d="M73.76,24.4a7.53,7.53,0,0,0,4,1.28c1.47,0,2.57-.37,2.57-1.65,0-2.57-7-1.65-7-6.42,0-2.57,2.2-4.4,5.69-4.4a15.77,15.77,0,0,1,4.4.73v3.12a10.88,10.88,0,0,0-4.22-.92c-1.28,0-2,.37-2,1.28,0,2.39,7,1.47,7,6.61,0,3.3-2.75,4.59-6.06,4.59a10.94,10.94,0,0,1-5.5-1.47Z"></path>
+                <path class="cls-2" d="M86.24,6.24h3.67v9a8,8,0,0,1,5-2c2.39,0,4.77,1.1,4.77,5.32v9.72H96V19.63c0-1.83-.37-3.3-2.2-3.3A6.08,6.08,0,0,0,90.09,18V28.26H86.42v-22Z"></path>
+                <circle class="cls-2" cx="123.49" cy="20" r="20"></circle>
+                <polygon class="cls-3" points="112.84 30.64 123.12 8.07 123.85 15.96 117.06 30.46"></polygon>
+                <polygon class="cls-1" points="113.58 21.1 133.03 21.1 130.83 23.85 115.41 23.85"></polygon>
+                <polygon class="cls-1" points="110.28 16.15 135.96 16.15 133.76 18.9 112.11 18.9"></polygon>
+                <polygon class="cls-3" points="133.39 30.64 123.12 8.07 122.39 15.96 129.17 30.46"></polygon></svg>
+              </div>
+              <div class="wd-150 ht-65 bg-gray-100 mg-l-5 btn-deposit d-inline-flex align-items-center justify-content-center" onclick="$('#depositSystem').val('4'); $('.btn-deposit').removeClass('bd-gray-500 bd-1 bd') ;$(this).addClass('bd-gray-500 bd-1 bd')"><img src="files/card.png" style="width:45px"></div>
+              <div class="wd-150 ht-65 bg-gray-100 mg-l-5 btn-deposit d-inline-flex align-items-center justify-content-center" onclick="$('#depositSystem').val('1'); $('.btn-deposit').removeClass('bd-gray-500 bd-1 bd') ;$(this).addClass('bd-gray-500 bd-1 bd')">
+                <h5 class="mg-t-6">Другое</h5>
+              </div>
+            </div>
+            <div class="d-sm-none d-block">
+              <div class="row row-xs">
+                <div class="col-6">
+                  <div class="wd-150 ht-65 bg-gray-100 btn-deposit d-inline-flex align-items-center justify-content-center" onclick="$('#depositSystem').val('3'); $('.btn-deposit').removeClass('bd-gray-500 bd-1 bd') ;$(this).addClass('bd-gray-500 bd-1 bd')" style="height: 55px!important;width: 100%!important;">
+                    <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="80" viewbox="0 0 29.573537 13.433727" version="1.1">
+                    <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-48.845523,-338.5318)">
+                      <g id="g5493" transform="matrix(0.26458333,0,0,0.26458333,48.943684,337.05093)" style="fill:none">
+                        <path class="qdt" id="path5489" d="m 54.406,34.313 h 1.737 v 3.893 h 1.255 l 2.252,-3.893 h 1.899 l -2.703,4.569 v 0.032 L 61.71,43.9 H 59.747 L 57.43,39.717 H 56.176 V 43.9 h -1.738 v -9.588 h -0.032 z m 11.197,2.542 c 2.09,0 3.796,1.512 3.796,3.603 0,2.124 -1.673,3.604 -3.764,3.604 -2.092,0 -3.765,-1.48 -3.765,-3.604 -0.032,-2.123 1.641,-3.603 3.733,-3.603 z m 5.147,0.16 h 1.641 v 5.406 h 2.156 v -5.405 h 1.64 v 5.405 h 2.156 v -5.405 h 1.641 V 43.9 h -9.17 v -6.885 z m 14.093,-0.16 c 1.962,0 3.056,1.448 3.056,3.25 a 4.8,4.8 0 0 1 -0.064,0.675 h -4.73 c 0.097,1.19 1.03,1.834 2.06,1.834 0.707,0 1.415,-0.322 1.962,-0.74 l 0.676,1.223 c -0.708,0.61 -1.77,0.997 -2.767,0.997 -2.285,0 -3.7,-1.641 -3.7,-3.604 0,-2.155 1.447,-3.635 3.507,-3.635 z m 3.86,5.598 c 0.837,-0.129 1.448,-0.836 1.448,-3.282 v -2.155 h 5.02 V 43.9 h -1.706 v -5.502 h -1.673 v 0.772 c 0,2.992 -0.804,4.73 -3.089,4.794 v -1.512 z m 11.358,-5.598 c 1.962,0 3.056,1.448 3.056,3.25 a 4.8,4.8 0 0 1 -0.064,0.675 h -4.73 c 0.097,1.19 1.03,1.834 2.06,1.834 0.707,0 1.415,-0.322 1.962,-0.74 l 0.676,1.223 c -0.708,0.61 -1.77,0.997 -2.767,0.997 -2.284,0 -3.7,-1.641 -3.7,-3.604 0,-2.155 1.448,-3.635 3.507,-3.635 z m 4.472,0.16 h 1.705 v 2.639 h 0.837 l 1.673,-2.638 h 1.898 l -2.188,3.281 v 0.033 l 2.445,3.57 h -1.994 l -1.802,-2.798 h -0.9 V 43.9 H 104.5 v -6.885 h 0.032 z m -38.93,5.567 c 1.126,0 2.059,-0.869 2.059,-2.156 0,-1.255 -0.933,-2.156 -2.06,-2.156 -1.125,0 -2.026,0.87 -2.026,2.156 0,1.287 0.9,2.156 2.027,2.156 z M 86.162,39.59 c 0,-0.901 -0.612,-1.448 -1.384,-1.448 -0.868,0 -1.512,0.579 -1.673,1.448 z m 15.218,0 c 0,-0.901 -0.611,-1.448 -1.383,-1.448 -0.87,0 -1.513,0.579 -1.674,1.448 z" inkscape:connector-curvature="0" style="fill:#2d3540"></path>
+                        <path id="path5491" d="M 78.44,13.432 V 29.68 a 0.44,0.44 0 0 1 -0.45,0.45 h -3.314 a 0.44,0.44 0 0 1 -0.45,-0.45 V 13.432 a 0.44,0.44 0 0 1 0.45,-0.45 h 3.314 a 0.44,0.44 0 0 1 0.45,0.45 z m 25.868,-0.45 c 0.129,0 0.29,0.064 0.45,0.193 0.097,0.096 0.097,0.257 0.065,0.386 l -5.47,16.28 a 0.458,0.458 0 0 1 -0.418,0.29 h -2.96 c -0.193,0 -0.354,-0.097 -0.418,-0.29 L 92.37,20.35 89.185,29.84 a 0.458,0.458 0 0 1 -0.418,0.29 h -2.96 c -0.193,0 -0.354,-0.096 -0.418,-0.29 l -5.47,-16.28 c -0.032,-0.128 -0.032,-0.257 0.064,-0.385 0.065,-0.129 0.226,-0.193 0.354,-0.193 h 3.7 c 0.193,0 0.354,0.128 0.419,0.321 l 2.927,9.62 3.218,-9.62 a 0.458,0.458 0 0 1 0.418,-0.29 h 2.606 c 0.193,0 0.354,0.097 0.418,0.29 l 3.218,9.62 2.928,-9.62 a 0.444,0.444 0 0 1 0.418,-0.321 h 3.7 z m 5.598,0 c 0.225,0 0.418,0.193 0.45,0.45 V 29.68 a 0.44,0.44 0 0 1 -0.45,0.45 h -3.314 a 0.44,0.44 0 0 1 -0.45,-0.45 V 13.432 a 0.44,0.44 0 0 1 0.45,-0.45 z m -37.611,16.57 c 0.193,0.225 0.032,0.546 -0.258,0.546 H 67.983 A 0.519,0.519 0 0 1 67.565,29.905 L 66.89,29.069 c -1.416,0.9 -3.09,1.448 -4.859,1.448 -4.954,0 -8.976,-4.022 -8.976,-8.977 0,-4.955 4.022,-8.977 8.976,-8.977 4.955,0 8.977,4.022 8.977,8.977 0,1.77 -0.515,3.443 -1.416,4.858 l 2.703,3.153 z m -33.88,7.882 c 0.837,0.322 1.159,1.576 1.223,2.123 0.129,0.998 -0.16,1.384 -0.482,1.384 -0.322,0 -0.773,-0.386 -1.255,-1.158 -0.483,-0.773 -0.676,-1.641 -0.418,-2.092 0.16,-0.29 0.514,-0.418 0.933,-0.257 z m -4.89,3.636 c 0.515,0 1.094,0.225 1.609,0.675 0.997,0.837 1.287,1.802 0.772,2.51 -0.29,0.354 -0.772,0.579 -1.319,0.579 -0.547,0 -1.126,-0.193 -1.512,-0.547 -0.901,-0.772 -1.158,-2.06 -0.58,-2.767 0.226,-0.29 0.58,-0.45 1.03,-0.45 z m -11.26,9.298 c -12.227,0 -22.136,-9.91 -22.136,-22.136 0,-12.226 9.91,-22.135 22.135,-22.135 12.226,0 22.136,9.91 22.136,22.135 0,4.15 -1.158,8.044 -3.12,11.358 -0.065,0.096 -0.226,0.064 -0.258,-0.065 -0.772,-5.437 -4.086,-8.43 -8.912,-9.33 -0.419,-0.065 -0.483,-0.322 0.064,-0.386 1.48,-0.129 3.571,-0.097 4.665,0.096 0.064,-0.547 0.097,-1.126 0.097,-1.705 0,-8.076 -6.564,-14.64 -14.64,-14.64 -8.075,0 -14.639,6.564 -14.639,14.64 0,8.076 6.564,14.64 14.64,14.64 h 0.675 a 19.749,19.749 0 0 1 -0.29,-3.958 c 0.033,-0.901 0.226,-1.03 0.612,-0.322 2.027,3.507 4.923,6.66 10.585,7.915 4.633,1.03 9.266,2.22 14.253,8.558 0.45,0.547 -0.225,1.126 -0.74,0.676 -5.083,-4.505 -9.716,-5.985 -13.931,-5.985 -4.73,0.033 -7.947,0.644 -11.197,0.644 z m 41.986,-24.42 -1.77,-2.156 c -0.192,-0.225 -0.031,-0.579 0.258,-0.579 h 3.732 c 0.193,-0.515 0.29,-1.094 0.29,-1.673 0,-2.67 -1.995,-4.987 -4.73,-4.987 -2.734,0 -4.73,2.317 -4.73,4.987 0,2.67 1.996,4.955 4.73,4.955 0.772,0.032 1.545,-0.193 2.22,-0.547 z" inkscape:connector-curvature="0" style="fill:#ff8c00"></path>
+                      </g>
+                    </g></svg>
+                  </div>
+                </div>
+                <div class="col-sm col-6">
+                  <div class="wd-150 ht-65 bg-gray-100 btn-deposit d-inline-flex align-items-center justify-content-center" onclick="$('#depositSystem').val('2'); $('.btn-deposit').removeClass('bd-gray-500 bd-1 bd') ;$(this).addClass('bd-gray-500 bd-1 bd')" style="height: 55px!important;width: 100%!important;">
+                    <svg width="80" height="38" viewbox="0 0 160 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="qdt qdt1" d="M136.851 36.6707C136.851 33.4144 136.851 30.1772 136.851 26.9209C136.851 19.1005 136.851 11.2801 136.851 3.45991V2.05076C141.312 2.22208 145.696 1.59364 149.961 2.86958C151.962 3.40809 153.723 4.57671 154.969 6.19255C156.216 7.80839 156.877 9.78059 156.849 11.8006C157.007 13.9038 156.443 15.9984 155.246 17.7561C154.05 19.5137 152.287 20.8351 150.235 21.5126L149.022 21.9316L155.265 30.3295C156.849 32.4623 158.414 34.6141 160 36.766H153.386C153.398 36.6968 153.398 36.6258 153.386 36.5566C150.157 32.0433 146.928 27.5302 143.602 23.0551C143.407 22.7695 142.897 22.6933 142.349 22.4457V36.766L136.851 36.6707ZM142.448 6.69722V17.9134C144.555 18.1033 146.677 17.7895 148.63 16.9995C149.573 16.5642 150.363 15.869 150.904 15.0002C151.443 14.1313 151.708 13.1273 151.668 12.1128C151.626 11.0984 151.279 10.1182 150.669 9.2942C150.06 8.4702 149.214 7.83856 148.24 7.47793C146.399 6.77374 144.414 6.50608 142.448 6.69722Z" fill="#637388"></path>
+                    <path class="qdtP" d="M20.4255 36.6705C20.4497 36.3847 20.5073 36.1028 20.5965 35.8306L37.1056 0.725464C37.2025 0.515373 37.3553 0.305434 37.5262 0L43.2591 12.7897L53.4816 35.5824C53.6102 35.9372 53.7131 36.3009 53.7872 36.6705H48.1692C47.0422 34.0934 45.9531 31.4973 44.7884 28.9202C44.6886 28.7793 44.5599 28.6607 44.4117 28.5719C44.2635 28.4832 44.0987 28.4263 43.9277 28.4048C39.4185 28.4048 34.9092 28.4048 30.4 28.4048C30.2396 28.415 30.0839 28.4616 29.9447 28.5411C29.8056 28.6204 29.6861 28.7305 29.5968 28.863C28.3928 31.4782 27.228 34.1316 26.0617 36.766L20.4255 36.6705ZM42.418 23.3081L37.2781 11.6062L31.9474 23.3081H42.418Z" fill="#637388"></path>
+                    <path class="qdt qdt1" d="M83.7447 36.7277C83.7447 34.469 83.7447 32.2103 83.7447 29.9323C83.7447 21.0889 83.7447 12.2516 83.7447 3.42092V2.0426H103.45V6.94303H89.3607V15.7291H103.154V20.7826H89.3607V31.7508H103.489V36.766L83.7447 36.7277Z" fill="#637388"></path>
+                    <path class="qdt qdt1" d="M110.298 36.7277C110.298 34.469 110.298 32.2103 110.298 29.9323C110.298 21.0889 110.298 12.2516 110.298 3.42092V2.0426H130.003V6.94303H115.914V15.7291H129.709V20.7826H115.914V31.7508H130.043V36.766L110.298 36.7277Z" fill="#637388"></path>
+                    <path class="qdtP" d="M0 2.07118C3.70553 2.07118 7.43086 1.91825 11.0969 2.31995C13.5302 2.56168 15.7797 3.71949 17.3862 5.55717C18.9913 7.39484 19.8318 9.77369 19.7375 12.2081C19.8226 14.6387 19.0003 17.0143 17.4287 18.8759C15.8571 20.7376 13.6503 21.9531 11.2321 22.2876C9.31249 22.6128 7.39127 22.6128 5.47162 22.7657V36.766H0V2.07118ZM5.47162 17.6973C7.58429 17.9587 9.73046 17.7161 11.7307 16.9897C12.6654 16.5829 13.4481 15.8923 13.9649 15.0164C14.4816 14.1404 14.7081 13.124 14.6108 12.1124C14.6701 11.1014 14.3996 10.0985 13.8387 9.2538C13.2779 8.4089 12.4572 7.76792 11.5012 7.42653C9.55263 6.82459 7.49918 6.62925 5.47162 6.85276V17.6973Z" fill="#637388"></path>
+                    <path class="qdtP" d="M63.2962 36.766C63.2962 32.1508 63.2962 27.5356 63.2962 22.9205C63.2777 22.185 63.0772 21.4648 62.7117 20.8226C59.3223 14.9868 55.8743 9.18909 52.4463 3.3724C52.232 3.01002 52.0361 2.64778 51.7447 2.11381C53.6923 2.11381 55.6399 2.11381 57.4904 2.11381C57.7834 2.11381 58.1334 2.51421 58.3092 2.81936C60.7056 6.82425 63.0618 10.8484 65.4381 14.8724L66.0611 15.8832L68.166 12.3359C70.0165 9.20817 71.8669 6.09963 73.6587 2.95293C73.7944 2.64992 74.0289 2.39851 74.3234 2.23685C74.6195 2.0752 74.9603 2.01185 75.2949 2.05657C76.911 2.05657 78.5486 2.05657 80.3404 2.05657C80.0675 2.55238 79.8917 2.89568 79.6974 3.21991C76.217 9.132 72.7366 15.0377 69.2562 20.9369C69.0018 21.3204 68.8476 21.7593 68.8091 22.2148C68.8091 27.0398 68.8091 31.8648 68.8091 36.7089L63.2962 36.766Z" fill="#637388"></path></svg>
+                  </div>
+                </div>
+                <div class="col-sm col-6 mg-t-10">
+                  <div class="wd-150 ht-65 bg-gray-100 btn-deposit d-inline-flex align-items-center justify-content-center" onclick="$('#depositSystem').val('2'); $('.btn-deposit').removeClass('bd-gray-500 bd-1 bd') ;$(this).addClass('bd-gray-500 bd-1 bd')" style="height: 55px!important;width: 100%!important;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" viewbox="0 0 143.49 40">
+                    <defs></defs>
+                    <title>advcash</title>
+                    <path class="cls-1 qdt" d="M9.17,27A6.29,6.29,0,0,1,5,28.62a4.67,4.67,0,0,1-5-4.77,4.05,4.05,0,0,1,2.57-4,11.88,11.88,0,0,1,3.85-.92L9,18.72v-.55c0-1.65-1.1-2.39-2.94-2.39a8.6,8.6,0,0,0-3.85,1.1L.92,14.5A12.49,12.49,0,0,1,6.61,13c4,0,5.87,1.83,5.87,5.32V24.4a11.36,11.36,0,0,0,.37,3.85H9.72Zm-2.39-5.5a3.91,3.91,0,0,0-2.2.55,1.93,1.93,0,0,0-.92,1.65,2,2,0,0,0,2.2,2,4.9,4.9,0,0,0,2.94-1.1V21.47Z"></path>
+                    <path class="cls-1 qdt" d="m14.68 21.1c0-4.77 3.49-7.89 8.07-7.89a7.53 7.53 0 0 1 2 0.18v-7.15h3.67v21.47a13.41 13.41 0 0 1-5.5 1.1c-4.57-0.19-8.24-2.75-8.24-7.71zm10.09 4.22v-8.81a5.66 5.66 0 0 0-1.83-0.18 4.48 4.48 0 0 0-4.59 4.77 4.24 4.24 0 0 0 4.59 4.59c0.55-0.19 1.28-0.19 1.83-0.37z"></path>
+                    <path class="cls-1 qdt" d="m29.72 13.58h3.85l3.67 10.09 3.67-10.09h3.67l-6.05 14.86h-2.75z"></path>
+                    <path class="cls-2" d="M45.14,21.1A7.72,7.72,0,0,1,53,13.21a10.07,10.07,0,0,1,4,.92v3.12a6.2,6.2,0,0,0-3.67-1.1c-2.75,0-4.4,2-4.4,4.77,0,3.12,1.65,4.77,4.22,4.77a7,7,0,0,0,3.49-.92l1.1,2.57a10,10,0,0,1-5.14,1.47A7.37,7.37,0,0,1,45.14,21.1Z"></path>
+                    <path class="cls-2" d="M67.52,27a6.29,6.29,0,0,1-4.22,1.65,4.67,4.67,0,0,1-5-4.77,4.05,4.05,0,0,1,2.57-4,11.88,11.88,0,0,1,3.85-.92l2.57-.18v-.55c0-1.65-1.1-2.39-2.94-2.39a8.6,8.6,0,0,0-3.85,1.1L59.27,14.5A12.49,12.49,0,0,1,65,13c4,0,5.87,1.83,5.87,5.32V24.4a11.36,11.36,0,0,0,.37,3.85H68.07Zm-2.39-5.5a3.91,3.91,0,0,0-2.2.55A1.93,1.93,0,0,0,62,23.67a2,2,0,0,0,2.2,2,4.9,4.9,0,0,0,2.94-1.1V21.47Z"></path>
+                    <path class="cls-2" d="M73.76,24.4a7.53,7.53,0,0,0,4,1.28c1.47,0,2.57-.37,2.57-1.65,0-2.57-7-1.65-7-6.42,0-2.57,2.2-4.4,5.69-4.4a15.77,15.77,0,0,1,4.4.73v3.12a10.88,10.88,0,0,0-4.22-.92c-1.28,0-2,.37-2,1.28,0,2.39,7,1.47,7,6.61,0,3.3-2.75,4.59-6.06,4.59a10.94,10.94,0,0,1-5.5-1.47Z"></path>
+                    <path class="cls-2" d="M86.24,6.24h3.67v9a8,8,0,0,1,5-2c2.39,0,4.77,1.1,4.77,5.32v9.72H96V19.63c0-1.83-.37-3.3-2.2-3.3A6.08,6.08,0,0,0,90.09,18V28.26H86.42v-22Z"></path>
+                    <circle class="cls-2" cx="123.49" cy="20" r="20"></circle>
+                    <polygon class="cls-3" points="112.84 30.64 123.12 8.07 123.85 15.96 117.06 30.46"></polygon>
+                    <polygon class="cls-1" points="113.58 21.1 133.03 21.1 130.83 23.85 115.41 23.85"></polygon>
+                    <polygon class="cls-1" points="110.28 16.15 135.96 16.15 133.76 18.9 112.11 18.9"></polygon>
+                    <polygon class="cls-3" points="133.39 30.64 123.12 8.07 122.39 15.96 129.17 30.46"></polygon></svg>
+                  </div>
+                </div>
+                <div class="col-sm col-6 mg-t-10">
+                  <div class="wd-150 ht-65 bg-gray-100 btn-deposit d-inline-flex align-items-center justify-content-center" onclick="$('#depositSystem').val('4'); $('.btn-deposit').removeClass('bd-gray-500 bd-1 bd') ;$(this).addClass('bd-gray-500 bd-1 bd')" style="height: 55px!important;width: 100%!important;">
+                    <div class="wd-150 ht-65 bg-gray-100 mg-l-5 btn-deposit d-inline-flex align-items-center justify-content-center" onclick="$('#depositSystem').val('4'); $('.btn-deposit').removeClass('bd-gray-500 bd-1 bd') ;$(this).addClass('bd-gray-500 bd-1 bd')"><img src="files/card.png" style="width:45px"></div>
+                  </div>
+                </div>
+                <div class="col-sm col-6 mg-t-10">
+                  <div class="wd-150 ht-65 bg-gray-100 btn-deposit d-inline-flex align-items-center justify-content-center" onclick="$('#depositSystem').val('1'); $('.btn-deposit').removeClass('bd-gray-500 bd-1 bd') ;$(this).addClass('bd-gray-500 bd-1 bd')" style="height: 55px!important;width: 100%!important;">
+                    <h5 class="mg-t-6">Другое</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="row-md"></div>
+            </div>
+            <div class="form-group mg-t-15">
+              <label class="tx-normal la-mob">Сумма:</label>
+              <div id="the-basics" class="input-group tx-light tx-16 col-6 pd-0">
+                <input id="depositSize" autocomplete="off" class="form-control tx-normal" style="border-top-right-radius: 5px;border-bottom-right-radius: 5px;" value="100"> <input id="depositSystem" autocomplete="off" class="form-control tx-normal d-none" placeholder="">
+              </div><span class="nav-line-profile badge bt-com" style="margin-top:10px; background-color: #e5e9f2;color: #8392a5;">Комиссия: 0%</span>
+            </div><button id="depositButton" onclick="deposit()" class="btn btn-primary tx-normal btn-la-mob" style="padding: 8px 18px;">Далее</button> <button id="error_deposit" style="margin-left: 7px; padding: 8px 22px; pointer-events: none; display:none" class="btn tx-medium btn-la-mob bg-danger-dice tx-white bd-0 btn-sel-d"></button> 
+            <script>
+
+
+                        function deposit() {
+                                                if ( $('#depositSystem').val() > 6 || !$.isNumeric($('#depositSystem').val())){
+                                                        $('#error_deposit').show();
+                                                        return $('#error_deposit').html('Укажите систему пополнения');
+                                                }
+                                                if ( $('#depositSize').val() == ''){
+                                                        $('#error_deposit').show();
+                                                        return $('#error_deposit').html('Введите сумму');
+                                                }
+                                                
+                                                if (!$.isNumeric($('#depositSize').val())){
+                                                        $('#error_deposit').show();
+                                                        return $('#error_deposit').html('Введите корректную сумму');
+                                                }
+                                                $.ajax({
+                    type: 'POST',
+                    url: 'action.php',
+                    data: {
+                        type: "deposit",
+                        sid: Cookies.get('sid'),
+                        system: $('#depositSystem').val(),
+                        size: $('#depositSize').val()
+                    },
+                                          beforeSend: function(data) {
+                                                
+                                                $('#depositButton').addClass('disabled');
+                                        },
+                    success: function(data) {
+                        var obj = jQuery.parseJSON(data);
+                        if ('success' in obj) {
+                                                        window.location.href = obj.success.location;
+                        }
+
+                        if ('error' in obj) {
+                            $('#depositButton').removeClass('disabled');
+                            $('#error_deposit').show();
+                            return $('#error_deposit').html(obj.error.text);
+                        }
+
+                    }
+                });
+                                                
+                                        }
+                        
+                        
+                        
+            </script>
+            <div class="table-responsive mg-t-30">
+              <div class="table-responsive">
+                <table class="table table-sm mg-b-0 table-deposit">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Дата</th>
+                      <th scope="col">Сумма</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    $('#checkModal').on('show.bs.modal', function (e) {
+        var gi = $(e.relatedTarget).attr('gameid');
+        
+        if (isNaN(window.location.pathname.split("/")[2]) && window.location.pathname.split("/")[1] !== 'game'){
+        $.ajax({
+        type: 'POST',
+        url: '/action.php',
+        data: {
+            type: "gameHistory",
+            id: gi
+        },
+        success: function (data) {
+            history.pushState(null, null, '/game/' + gi);
+            $("#checkModal .modal-body").html(data);
+        }
+    });
+        
+        
+        
+        $(this).find('#modalGameId').html(gi);
+        }
+    });
+
+
+
+
+
+        $('[data-toggle="tooltip"]').tooltip();
+
+      
+
+       $(".js-range-slider").ionRangeSlider({
+                skin: "round",
+                min: 2,
+                max: 24,
+                from: 3,
+                grid: true,
+                onChange: function (data) {
+                    getMinesRate();
+                }
+            });
+        route();
+        
+        
+
+    </script>
+    <div class="footer hash-mob ft-ct">
+      <footer class="footer container" style="border:0">
+        <div>
+          <span>© 2020 Cabura. All rights reserved</span>
+        </div>
+        <div>
+          <nav class="nav">
+            <a href="/terms.php" class="nav-link">Пользовательское соглашение</a> <a href="/policy.php" class="nav-link">Политика конфеденциальности</a> <a href="/cdn-cgi/l/email-protection#bccfc9ccccd3cec8fcdfdddec9cedd92dfd3d1" class="nav-link"><u><span class="__cf_email__" data-cfemail="40333530302f3234002321223532216e232f2d">[email&#160;protected]</span></u></a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+    <div class="content content-fixed hash-mob ft-ct d-none">
+      <footer>
+        <div class="text-center d-none"><img class="wd-60" src="/files/visa.5bf5989ee2a63be5110ead2ccc3afbfc.svg"> <img class="ht-40 mg-l-15" src="/files/mastercard.fdf8a1307673e1b5db6a70d784a04581.svg"> <svg class="mg-t-4 mg-l-15" width="72" height="26" viewbox="0 0 72 26">
+        <path fill="#637388" fill-rule="evenodd" d="M17.614 22.796c2.243 0 4.676.76 7.37 3.118.27.236.629-.057.393-.35-2.647-3.303-5.095-3.932-7.536-4.463-2.986-.65-4.523-2.31-5.593-4.133-.213-.363-.309-.3-.328.167-.023.57.016 1.325.146 2.067-.12.005-.242.004-.364.004-4.272 0-7.736-3.422-7.736-7.644 0-4.22 3.464-7.643 7.736-7.643s7.736 3.422 7.736 7.643c0 .3-.015.598-.049.889-.565-.1-1.677-.112-2.457-.045-.293.025-.252.16-.03.2 2.557.456 4.314 2.022 4.716 4.863.009.066.095.085.13.029a11.405 11.405 0 0 0 1.656-5.936C23.404 5.177 18.165 0 11.702 0S0 5.177 0 11.562c0 6.386 5.24 11.564 11.702 11.564 1.715 0 3.416-.33 5.912-.33zm.871-4.198c.52.435.68.952.404 1.317-.153.2-.401.31-.699.31a1.25 1.25 0 0 1-.796-.285c-.474-.409-.613-1.071-.304-1.448.121-.147.317-.228.553-.228.285 0 .585.119.842.334zm2.402-1.104c.077.506-.085.716-.248.716-.177 0-.4-.205-.663-.61-.26-.4-.355-.86-.226-1.092.085-.153.263-.22.487-.136.434.162.605.819.65 1.122zm16.222-2.648l-1.35-1.604a.258.258 0 0 1 .202-.423h2.822c.134-.395.21-.817.21-1.256 0-2.008-1.513-3.74-3.589-3.74-2.077 0-3.59 1.732-3.59 3.74 0 2.009 1.513 3.716 3.59 3.716.63 0 1.206-.16 1.705-.433zm6.104 2.71c.147.16.026.417-.194.417h-3.08a.424.424 0 0 1-.325-.15l-.522-.62a6.816 6.816 0 0 1-3.688 1.078c-3.75 0-6.8-3.013-6.8-6.718 0-3.704 3.05-6.718 6.8-6.718s6.8 3.014 6.8 6.718c0 1.336-.399 2.58-1.081 3.627l2.09 2.365zM71.666 5.153h-2.514a.333.333 0 0 0-.334.33v12.158c0 .182.15.33.334.33h2.514a.332.332 0 0 0 .334-.33V5.485c0-.183-.15-.331-.334-.331zm-4.23 0h-2.812a.334.334 0 0 0-.32.232l-2.226 7.185-2.446-7.193a.334.334 0 0 0-.317-.224h-1.962a.334.334 0 0 0-.318.224l-2.445 7.193-2.226-7.185a.334.334 0 0 0-.32-.232h-2.812a.337.337 0 0 0-.271.136.322.322 0 0 0-.046.295l4.13 12.164a.334.334 0 0 0 .318.224h2.232c.144 0 .271-.09.317-.223l2.422-7.107 2.422 7.107a.334.334 0 0 0 .317.223h2.232c.144 0 .272-.09.317-.224l4.131-12.164a.322.322 0 0 0-.046-.295.337.337 0 0 0-.271-.136zm-19.586.33v12.158c0 .182-.15.33-.334.33h-2.514a.332.332 0 0 1-.334-.33V5.485c0-.183.15-.331.334-.331h2.514c.184 0 .334.148.334.33z"></path></svg> <img class="ht-25 mg-l-25" src="/files/yandex_white.svg"> <img class="ht-30 mg-l-25 mg-t-5" src="/files/alfabank_black.svg"> <img class="ht-20 mg-l-25" src="/files/payeer.svg"> <img class="ht-25 mg-l-25 mg-t-5" src="/files/perfectmoney.svg"></div>
+      </footer>
+    </div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> 
+    <script></script> 
+    <script>
+
+    history.pushState(null, null, window.location.pathname.split("?")[0]);
+    </script>
+  </div>
+</body>
+</html>
